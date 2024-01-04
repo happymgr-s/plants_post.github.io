@@ -1,8 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import { Inter, Josefin_Sans } from "next/font/google";
+import { Klee_One } from "next/font/google";
+import "./global.css";
+import Header from "@/components/ui/Header";
 
 const inter = Inter({ subsets: ["latin"] });
+const KleeOneFont = Klee_One({
+  weight: "600",
+  subsets: ["latin"],
+});
+
+const JosefinSans = Josefin_Sans({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "PLANTS POST",
@@ -16,7 +27,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={JosefinSans.className}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
